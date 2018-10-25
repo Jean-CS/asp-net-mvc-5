@@ -23,6 +23,14 @@ namespace Vidly.Migrations
                 new MembershipType() { Id = 3, Name = "Quarterly", SignUpFee = 90, DiscountRate = 15, DurationInMonths = 4 },
                 new MembershipType() { Id = 4, Name = "Annual", SignUpFee = 300, DiscountRate = 20, DurationInMonths = 12 }
                 );
+
+            context.Genre.AddOrUpdate(x => x.Id,
+                new Genre() { Id = 1, Name = "Action" },
+                new Genre() { Id = 2, Name = "Comedy" },
+                new Genre() { Id = 3, Name = "Family" },
+                new Genre() { Id = 4, Name = "Romance" },
+                new Genre() { Id = 5, Name = "Thriller" }
+                );
         }
     }
 }
