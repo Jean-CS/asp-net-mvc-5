@@ -1,9 +1,7 @@
 namespace Vidly.Migrations
 {
-    using System;
-    using System.Data.Entity;
+    using Models;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Vidly.Models.ApplicationDbContext>
     {
@@ -18,6 +16,13 @@ namespace Vidly.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
+            context.MembershipType.AddOrUpdate(x => x.Id,
+                new MembershipType() { Id = 1, Name = "Pay as you go", SignUpFee = 0, DiscountRate = 0, DurationInMonths = 0 },
+                new MembershipType() { Id = 2, Name = "Monthly", SignUpFee = 30, DiscountRate = 10, DurationInMonths = 1 },
+                new MembershipType() { Id = 3, Name = "Quarterly", SignUpFee = 90, DiscountRate = 15, DurationInMonths = 4 },
+                new MembershipType() { Id = 4, Name = "Annual", SignUpFee = 300, DiscountRate = 20, DurationInMonths = 12 }
+                );
         }
     }
 }
