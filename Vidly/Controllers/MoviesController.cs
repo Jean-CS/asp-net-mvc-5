@@ -27,11 +27,6 @@ namespace Vidly.Controllers
             var genres = _context.Genre.ToList();
             var vm = new MovieFormViewModel
             {
-                Movie = new Movie
-                {
-                    ReleaseDate = DateTime.Now,
-                    NumberInStock = 0
-                },
                 Genres = genres
             };
 
@@ -44,9 +39,8 @@ namespace Vidly.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var vm = new MovieFormViewModel
+                var vm = new MovieFormViewModel(movie)
                 {
-                    Movie = movie,
                     Genres = _context.Genre.ToList()
                 };
 
@@ -81,9 +75,8 @@ namespace Vidly.Controllers
                 return HttpNotFound();
             }
 
-            var vm = new MovieFormViewModel
+            var vm = new MovieFormViewModel(movie)
             {
-                Movie = movie,
                 Genres = _context.Genre.ToList()
             };
 
