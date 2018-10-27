@@ -204,6 +204,10 @@
     <Compile Include="Migrations\201810250207268_AddFieldsToMovie.Designer.cs">
       <DependentUpon>201810250207268_AddFieldsToMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810270153245_AddMaxLengthToMovieNameField.cs" />
+    <Compile Include="Migrations\201810270153245_AddMaxLengthToMovieNameField.Designer.cs">
+      <DependentUpon>201810270153245_AddMaxLengthToMovieNameField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -211,6 +215,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -321,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810250207268_AddFieldsToMovie.resx">
       <DependentUpon>201810250207268_AddFieldsToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810270153245_AddMaxLengthToMovieNameField.resx">
+      <DependentUpon>201810270153245_AddMaxLengthToMovieNameField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
