@@ -24,7 +24,7 @@
             var type = table.dataset.type;
             var deleteBtn = '[data-action="delete"]';
 
-            $(table).DataTable({
+            var dt = $(table).DataTable({
                 ajax: {
                     url: '/api/' + type,
                     dataSrc: ''
@@ -57,7 +57,7 @@
                             url: '/api/' + type + "/" + btn.data('id'),
                             method: "DELETE",
                             success: function () {
-                                btn.parents('tr').remove();
+                                dt.row(btn.parents('tr')).remove().draw();
                             }
                         });
                     }
